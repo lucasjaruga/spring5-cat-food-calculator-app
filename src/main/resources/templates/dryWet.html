@@ -4,23 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Cat Food Calculator</title>
-    <link href="indexStyle.css" type="text/css" rel="stylesheet">
+    <link href="dryWetStyle.css" type="text/css" rel="stylesheet">
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
 
 <body>
 
-<div class="flex-container1">
+<div class="flex-container2">
 
+    <div><p>2). Provide information about cat and food</p></div>
 
+    <div>
+        <form>
+            <label for="catWeight">Weight of cat in grams (g)</label><br>
+            <input type="text" id="catWeight" name="catWeight"><br>
+        </form>
+    </div>
+
+    <div>
+        <p1>Choose which type of food you want to calculate</p1>
+    </div>
+
+    <div>
+        <input type="radio" id="dry" name="dry" value="dry">
+        <label for="dry">Dry food</label>
+        <input type="radio" id="wet" name="wet" value="wet">
+        <label for="wet">Wet food</label>
+    </div>
+
+    <div>
+        <form>
+            <label for="noMeals">Number of meals per day</label><br>
+            <input type="text" id="noMeals" name="noMeals"><br>
+        </form>
+    </div>
+
+    <div><button class="button button1">Calculate</button></div>
 
 </div>
 
+<div class="flex-container1">
 
-<div class="flex-container2">
-
-
+    <div><button class="button button1">Go back</button></div>
 
 </div>
 
