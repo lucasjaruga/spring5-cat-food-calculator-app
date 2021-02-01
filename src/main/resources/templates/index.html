@@ -4,89 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Cat Food Calculator</title>
+    <link href="indexStyle.css" type="text/css" rel="stylesheet">
 </head>
-
-<!- --------------------- STYLES start ---------------------  ->
-
-<style>
-    img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .flex-container1 {
-        display: flex;
-        height: 175px;
-        background-color: greenyellow;
-        flex-direction: column;
-        line-height: 30px;
-        margin-outside: 10px;
-    }
-
-    .flex-container2 {
-        display: flex;
-        height: 150px;
-        background-color: cornflowerblue;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        line-height: 30px;
-        float: left;
-    }
-
-    .flex-container > div {
-    }
-
-    .button {
-        border: none;
-        color: black;
-        padding: 16px 16px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-
-    .button1 {
-        background-color: white;
-        color: black;
-        border: 2px solid #000000;
-    }
-
-    .button1:hover {
-        background-color: #000000;
-        color: white;
-    }
-
-</style>
-
-<!- --------------------- STYLES end ---------------------  ->
 
 <!- --------------------- BODY starts ---------------------  ->
 
 <body>
 
-        <div class="flex-container1">
+<div class="flex-container1">
 
-            <img src="\spring5-cat-food-calculator-app\src\main\resources\static\images\cat.png"
-                 alt="Cat Icon"
-                 style="width:100px;height:100px;">
-            <h1>Cat Food Calculator</h1>
+    <img src="\spring5-cat-food-calculator-app\src\main\resources\static\images\cat.png"
+         alt="Cat Icon">
+    <h1>Cat Food Calculator</h1>
 
-        </div>
+</div>
 
 
-        <div class="flex-container2">
+<div class="flex-container2">
 
-            <p1 style="font-size:120%">1). Choose the type of food which you want to calculate</p1>
+    <p1 >1). Choose the type of food which you want to calculate</p1>
 
-            <button class="button button1">Dry / wet food</button>
-            <button class="button button1">Mix food</button>
+    <button class="button button1">Dry / wet food</button>
+    <button class="button button1">Mix food</button>
 
-        </div>
+</div>
 
 </body>
 
