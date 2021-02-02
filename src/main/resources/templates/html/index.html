@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
     <title>Cat Food Calculator</title>
-    <link href="../css/indexStyle.css" type="text/css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/indexStyle.css}" />
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
@@ -14,7 +15,7 @@
 <div class="flex-container1">
 
     <div>
-        <img src="\spring5-cat-food-calculator-app\src\main\resources\static\images\cat.png" alt="Cat Icon">
+        <img th:src="@{/images/cat.png}" alt="Cat Icon" />
     </div>
 
     <div style="align-self: center">

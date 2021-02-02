@@ -52,12 +52,14 @@ public final class Algorithm {
      * @param wetFoodText - a JTextField object which stores String user input value of how much wet food owner wants to give to a cat
      * @return a Double which represents amount of dry food to give a cat per day
      */
-    public Double calculatePercentOfDryFood(Double wetResult, Double dryResult, JTextField wetFoodText){
+
+    // TODO fix it. Temporarily commented to disable a code
+    /*public Double calculatePercentOfDryFood(Double wetResult, Double dryResult, JTextField wetFoodText){
 
         double amountOfWet = Double.parseDouble(wetFoodText.getText());
         double dailyNeeds = amountOfWet / wetResult;
         Double percentOfDryFood = 1.0 - dailyNeeds;
 
         return dryResult * percentOfDryFood;
-    }
+    }*/
 }
