@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cat Food Calculator</title>
-    <link href="dryWetStyle.css" type="text/css" rel="stylesheet">
+    <title>Mix food</title>
+    <link href="../css/mixStyle.css" type="text/css" rel="stylesheet">
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
@@ -27,15 +27,14 @@
     </div>
 
     <div>
-        <fieldset>
-            <legend>Choose type of food you want to calculate</legend>
-            <div>
-                <input class="radio-input" type="radio" id="dry" name="oneTypeFood" value="dry">
-                <label class="radio-label" for="dry">Dry food</label>
-                <input class="radio-input" type="radio" id="wet" name="oneTypeFood" value="wet">
-                <label class="radio-label" for="wet">Wet food</label>
-            </div>
-        </fieldset>
+        <form>
+            <fieldset>
+                <legend>How much wet food per day in grams (g)</legend>
+                <div>
+                    <input required type="text" id="wetFood" name="catWeight" maxlength="5" size="4" >
+                </div>
+            </fieldset>
+        </form>
     </div>
 
     <div>
