@@ -13,30 +13,39 @@
 
 <div class="flex-container2">
 
-    <div><p>2). Provide information about cat and food</p></div>
+    <div><p>2). <u>Provide information about cat and food</u></p></div>
 
     <div>
         <form>
-            <label for="catWeight">Weight of cat in grams (g)</label><br>
-            <input type="text" id="catWeight" name="catWeight"><br>
+            <fieldset>
+                <legend>Cat weight in grams (g)</legend>
+                <div>
+                    <input type="text" id="catWeight" name="catWeight" maxlength="5" size="4" >
+                </div>
+            </fieldset>
         </form>
     </div>
 
     <div>
-        <p1>Choose which type of food you want to calculate</p1>
-    </div>
-
-    <div>
-        <input type="radio" id="dry" name="dry" value="dry">
-        <label for="dry">Dry food</label>
-        <input type="radio" id="wet" name="wet" value="wet">
-        <label for="wet">Wet food</label>
+        <fieldset>
+            <legend>Choose type of food you want to calculate</legend>
+            <div>
+                <input class="radio-input" type="radio" id="dry" name="oneTypeFood" value="dry">
+                <label class="radio-label" for="dry">Dry food</label>
+                <input class="radio-input" type="radio" id="wet" name="oneTypeFood" value="wet">
+                <label class="radio-label" for="wet">Wet food</label>
+            </div>
+        </fieldset>
     </div>
 
     <div>
         <form>
-            <label for="noMeals">Number of meals per day</label><br>
-            <input type="text" id="noMeals" name="noMeals"><br>
+            <fieldset>
+                <legend>Number of meals per day</legend>
+                <div>
+                    <input type="text" id="noMeals" name="noMeals" maxlength="1" size="2">
+                </div>
+            </fieldset>
         </form>
     </div>
 
