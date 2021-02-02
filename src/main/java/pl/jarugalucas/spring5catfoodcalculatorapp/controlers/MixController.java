@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MixController {
 
     @RequestMapping({"/mix"})
-    public String index(){
-
+    public String mix(){
         return "/html/mix";
     }
 }

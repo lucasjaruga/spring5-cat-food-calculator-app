@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DryWetController {
 
     @RequestMapping({"/drywet"})
-    public String index(){
-
+    public String dryWet(){
         return "/html/dryWet";
     }
 }

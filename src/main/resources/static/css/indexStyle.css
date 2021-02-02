@@ -27,6 +27,11 @@ p {
     justify-content: center;
 }
 
+.button-group {
+    display: flex;
+    flex-direction: row;
+}
+
 .button {
     border: none;
     color: black;
