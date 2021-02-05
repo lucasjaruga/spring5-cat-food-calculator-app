@@ -12,8 +12,8 @@ public class DryWetController {
         return "/html/dryWet";
     }
 
-    @PostMapping("/goToIndex")
-    public String getDryWetFood() {
+    @PostMapping("/returnToIndexFromDryWet")
+    public String getIndex2() {
         return "redirect:/";
     }
 }
