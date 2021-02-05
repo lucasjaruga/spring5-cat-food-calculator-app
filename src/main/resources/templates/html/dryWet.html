@@ -61,7 +61,9 @@
 <div class="flex-container1">
 
     <div>
-        <button class="button button1">Go back</button>
+        <form th:action="@{/goToIndex}" method="post">
+            <button class="button button1">Go back</button>
+        </form>
     </div>
 
 </div>
