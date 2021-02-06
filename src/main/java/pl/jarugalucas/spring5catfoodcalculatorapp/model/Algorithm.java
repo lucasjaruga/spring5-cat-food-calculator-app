@@ -1,4 +1,4 @@
-package pl.jarugalucas.spring5catfoodcalculatorapp.algorithm;
+package pl.jarugalucas.spring5catfoodcalculatorapp.model;
 
 /**
  * The {@code Algorithm} class provides methods to calculate amount of food which user should give a cat.
