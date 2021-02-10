@@ -1,8 +1,5 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Cat {
 
     private Integer weight;
@@ -11,13 +8,20 @@ public class Cat {
     private Integer noMeals;
 
     public Cat() {
-
     }
 
+    // constructor for dry/wet food calculation
     public Cat(Integer weight, String typeOfFood, Integer noMeals) {
         this.weight = weight;
         this.typeOfFood = typeOfFood;
         this.noMeals = noMeals;
+    }
+
+    // constructor for mix food calculation
+    public Cat(Integer weight, Integer wetFoodValue, Integer noMeals) {
+        this.weight = weight;
+        this.noMeals = noMeals;
+        this.wetFoodValue = wetFoodValue;
     }
 
     public Integer getWeight() {
@@ -50,5 +54,15 @@ public class Cat {
 
     public void setNoMeals(Integer noMeals) {
         this.noMeals = noMeals;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "weight=" + weight +
+                ", typeOfFood='" + typeOfFood + '\'' +
+                ", wetFoodValue=" + wetFoodValue +
+                ", noMeals=" + noMeals +
+                '}';
     }
 }

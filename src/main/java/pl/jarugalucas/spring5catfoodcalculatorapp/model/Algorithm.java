@@ -1,5 +1,7 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * The {@code Algorithm} class provides methods to calculate amount of food which user should give a cat.
  * It uses some base values from Gussto and Feringa labels (cat food producers).
@@ -8,6 +10,8 @@ package pl.jarugalucas.spring5catfoodcalculatorapp.model;
  * @version 1.0
  * @author Lucas Jaruga
  */
+
+@Component
 public final class Algorithm {
 
     private final Integer minCatWeight = 2000;

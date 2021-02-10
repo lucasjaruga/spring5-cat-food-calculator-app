@@ -13,56 +13,59 @@
 <body>
 
 <div class="flex-container2">
-
     <div>
         <p>2). <u>Provide information about cat and food</u></p>
     </div>
 
     <div>
-        <form>
-            <fieldset>
-                <legend>Cat weight in grams (g)</legend>
-                <div>
-                    <input type="text" id="catWeight" name="catWeight" maxlength="5" size="4" >
-                </div>
-            </fieldset>
-        </form>
-    </div>
-
-    <div>
-        <fieldset>
-            <legend>Choose type of food you want to calculate</legend>
+        <!--/*@thymesVar id="cat" type="pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat"*/-->
+        <form action="#" th:object="${cat}" th:action="@{/postCatData}" method="post">
             <div>
-                <input class="radio-input" type="radio" id="dry" name="oneTypeFood" value="dry">
-                <label class="radio-label" for="dry">Dry food</label>
-                <input class="radio-input" type="radio" id="wet" name="oneTypeFood" value="wet">
-                <label class="radio-label" for="wet">Wet food</label>
+                <form>
+                    <fieldset>
+                        <legend>Cat weight in grams (g)</legend>
+                        <div>
+                            <input type="text" id="catWeight" name="catWeight" maxlength="5" size="4" th:field="*{weight}" />
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-        </fieldset>
-    </div>
 
-    <div>
-        <form>
-            <fieldset>
-                <legend>Number of meals per day</legend>
-                <div>
-                    <input type="text" id="noMeals" name="noMeals" maxlength="1" size="2">
-                </div>
-            </fieldset>
+            <div>
+                <fieldset>
+                    <legend>Choose type of food you want to calculate</legend>
+                    <div>
+                        <input class="radio-input" type="radio" id="dry" name="oneTypeFood" value="dry" checked="checked" th:field="*{typeOfFood}">
+                        <label class="radio-label" for="dry">Dry food</label>
+                        <input class="radio-input" type="radio" id="wet" name="oneTypeFood" value="wet" th:field="*{typeOfFood}">
+                        <label class="radio-label" for="wet">Wet food</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div>
+                <form>
+                    <fieldset>
+                        <legend>Number of meals per day</legend>
+                        <div>
+                            <input type="text" id="noMeals" name="noMeals" maxlength="1" size="2" th:field="*{noMeals}" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div>
+                <button type="submit" class="button button1">Calculate</button>
+            </div>
         </form>
     </div>
-
-    <div>
-        <button class="button button1">Calculate</button>
-    </div>
-
 </div>
 
 <div class="flex-container1">
 
     <div>
         <form th:action="@{/returnToIndexFromDryWet}" method="post">
-            <button class="button button1">Go back</button>
+            <button type="submit" class="button button1">Go back</button>
         </form>
     </div>
 
