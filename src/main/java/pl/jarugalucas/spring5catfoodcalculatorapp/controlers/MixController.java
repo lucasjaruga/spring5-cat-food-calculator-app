@@ -9,6 +9,8 @@ public class MixController {
 
     @RequestMapping({"/mix"})
     public String mix(){
+
+
         return "/html/mix";
     }
 

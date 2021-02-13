@@ -8,6 +8,7 @@ public class Cat {
     private Integer noMeals;
 
     public Cat() {
+        System.out.println("Cat class: inside default controller.");
     }
 
     // constructor for dry/wet food calculation

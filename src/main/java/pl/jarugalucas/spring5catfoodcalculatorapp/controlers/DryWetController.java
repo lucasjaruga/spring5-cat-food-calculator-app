@@ -1,6 +1,7 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.controlers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,9 @@ public class DryWetController implements WebMvcConfigurer {
     }
 
     @RequestMapping({"/drywet"})
-    public String dryWet(){
+    public String dryWet(Model model){
+
+        model.addAttribute("cat", new Cat());
         return "/html/dryWet";
     }
 
@@ -38,9 +41,7 @@ public class DryWetController implements WebMvcConfigurer {
     @PostMapping("/postCatData")
     public Cat postCatData(@Valid Cat cat, BindingResult errors){
 
-        if(errors.hasErrors()){
-            dryWet();
-        }
+
 
         return cat;
     }
