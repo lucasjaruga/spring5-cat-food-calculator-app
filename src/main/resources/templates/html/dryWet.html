@@ -20,16 +20,14 @@
 
     <div>
         <!--/*@thymesVar id="cat" type="pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat"*/-->
-        <form action="#" th:object="${cat}" th:action="@{/postCatData}" method="post">
+        <form action="#" th:object="${cat}" th:action="@{/1/postCatData}" method="post">
             <div>
-                <form>
                     <fieldset>
                         <legend>Cat weight in grams (g)</legend>
                         <div>
                             <input type="text" id="catWeight" name="catWeight" maxlength="5" size="4" th:field="*{weight}" />
                         </div>
                     </fieldset>
-                </form>
             </div>
 
             <div>
@@ -45,14 +43,12 @@
             </div>
 
             <div>
-                <form>
                     <fieldset>
                         <legend>Number of meals per day</legend>
                         <div>
                             <input type="text" id="noMeals" name="noMeals" maxlength="1" size="2" th:field="*{noMeals}" />
                         </div>
                     </fieldset>
-                </form>
             </div>
 
             <div>
@@ -65,7 +61,7 @@
 <div class="flex-container1">
 
     <div>
-        <form th:action="@{/returnToIndexFromDryWet}" method="get">
+        <form th:action="@{index.html/getIndex}" method="get">
             <button type="submit" class="button button1">Go back</button>
         </form>
     </div>

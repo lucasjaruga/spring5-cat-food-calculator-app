@@ -8,22 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat;
 
 @Controller
+@RequestMapping("/1")
 public class DryWetController {
 
     @RequestMapping({"/drywet"})
-    public String dryWet(Model model){
+    public String getDryWet(Model model){
 
         model.addAttribute("cat", new Cat());
         return "/html/dryWet";
     }
 
-    @RequestMapping("/returnToIndexFromDryWet")
-    public String getIndexFromDryWet() {
-        return "redirect:/";
-    }
-
     @PostMapping("/postCatData")
     public void postCatData(@ModelAttribute("cat") Cat cat){
+
+        // log purpose
         System.out.println(cat.toString());
+    }
+
+    @RequestMapping("index.html/getIndex")
+    public String getIndex() {
+        return "redirect:/";
     }
 }

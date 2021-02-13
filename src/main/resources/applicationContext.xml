@@ -11,6 +11,5 @@
 
     <context:component-scan base-package="pl.jarugalucas.spring5catfoodcalculatorapp.model" />
     <context:component-scan base-package="pl.jarugalucas.spring5catfoodcalculatorapp.controlers" />
-    <context:component-scan base-package="pl.jarugalucas.spring5catfoodcalculatorapp.services" />
 
 </beans>
