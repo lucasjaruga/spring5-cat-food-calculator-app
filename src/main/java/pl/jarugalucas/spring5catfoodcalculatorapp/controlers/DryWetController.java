@@ -39,7 +39,7 @@ public class DryWetController {
         }
         cat.setResult(result);
 
-        return "/html/result";
+        return "html/result";
     }
 
     @RequestMapping("index.html/getIndex")

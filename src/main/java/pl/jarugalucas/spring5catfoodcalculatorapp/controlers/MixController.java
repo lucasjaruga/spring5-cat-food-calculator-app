@@ -26,7 +26,21 @@ public class MixController {
     }
 
     @PostMapping("/postCatData")
-    public void postCatData(@ModelAttribute("cat") Cat cat){
+    public String postCatData(@ModelAttribute("cat") Cat cat){
+
+        // log purpose, will be remove later
+        System.out.println(cat.toString());
+
+        String result;
+        Double wet = cat.getWetFoodValue() / cat.getNoMeals();
+        Double dry = algorithmService.calculateDryFood(cat.getWeight());
+        Double wet2 = algorithmService.calculateWetFood(cat.getWeight());
+        Double dryValue = algorithmService.calculatePercentOfDryFood(wet2, dry, cat.getWetFoodValue());
+        result = wet + " g wet food and " + dryValue / cat.getNoMeals() + " g dry food per meal.";
+
+        cat.setResult(result);
+
+        return "html/result";
     }
 
     @RequestMapping("index.html/getIndex")
