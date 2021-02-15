@@ -1,18 +1,9 @@
-package pl.jarugalucas.spring5catfoodcalculatorapp.model;
+package pl.jarugalucas.spring5catfoodcalculatorapp.services;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-/**
- * The {@code Algorithm} class provides methods to calculate amount of food which user should give a cat.
- * It uses some base values from Gussto and Feringa labels (cat food producers).
- * This class should only be used while calculating food for adult cat. It's not prepared for kittens.
- *
- * @version 1.0
- * @author Lucas Jaruga
- */
-
-@Component
-public final class Algorithm {
+@Service
+public class AlgorithmServiceImpl implements AlgorithmService {
 
     private final Integer minCatWeight = 2000;
 
@@ -22,6 +13,7 @@ public final class Algorithm {
      * @param catWeight - an Integer value which represents cat's weight in grams
      * @return a Double value which represents amount of wet food for cat per day
      */
+    @Override
     public Double calculateWetFood(Integer catWeight){
 
         int baseAmountOfWet = 150;
@@ -38,6 +30,7 @@ public final class Algorithm {
      * @param catWeight - an Integer value which represents cat's weight in grams
      * @return a Double value which represents amount of dry food for cat per day
      */
+    @Override
     public Double calculateDryFood(Integer catWeight){
 
         int baseAmountOfDry = 40;

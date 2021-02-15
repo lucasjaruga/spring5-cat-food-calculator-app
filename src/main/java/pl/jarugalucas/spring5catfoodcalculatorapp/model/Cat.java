@@ -6,6 +6,7 @@ public class Cat {
     private String typeOfFood;
     private Integer wetFoodValue;
     private Integer noMeals;
+    private Double result;
 
     public Cat() {
     }
@@ -54,6 +55,14 @@ public class Cat {
 
     public void setNoMeals(Integer noMeals) {
         this.noMeals = noMeals;
+    }
+
+    public Double getResult() {
+        return result;
+    }
+
+    public void setResult(Double result) {
+        this.result = result;
     }
 
     @Override
