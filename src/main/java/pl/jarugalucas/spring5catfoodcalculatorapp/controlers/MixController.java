@@ -20,9 +20,6 @@ public class MixController {
 
     @PostMapping("/postCatData")
     public void postCatData(@ModelAttribute("cat") Cat cat){
-
-        // log purpose
-        System.out.println(cat.toString());
     }
 
     @RequestMapping("index.html/getIndex")

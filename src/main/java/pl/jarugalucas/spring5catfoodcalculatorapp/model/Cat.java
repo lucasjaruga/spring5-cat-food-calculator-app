@@ -1,8 +1,5 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Cat {
 
     private Integer weight;
@@ -11,9 +8,6 @@ public class Cat {
     private Integer noMeals;
 
     public Cat() {
-
-        // log stuff
-        System.out.println("Cat class: inside default controller.");
     }
 
     // constructor for dry/wet food calculation
