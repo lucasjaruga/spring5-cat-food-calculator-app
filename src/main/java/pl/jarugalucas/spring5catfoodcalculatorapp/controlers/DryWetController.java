@@ -33,9 +33,9 @@ public class DryWetController {
 
         String result;
         if(cat.getTypeOfFood().equals("dry")){
-            result = algorithmService.calculateDryFood(cat.getWeight()).toString();
+            result = algorithmService.calculateDryFood(cat.getWeight()) + " g dry food per meal.";
         } else {
-            result = algorithmService.calculateWetFood(cat.getWeight()).toString();
+            result = algorithmService.calculateWetFood(cat.getWeight()) + " g wet food per meal.";
         }
         cat.setResult(result);
 

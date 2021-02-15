@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cat Food Calculator</title>
-    <link type="text/css" rel="stylesheet" th:href="@{/static/css/result.css}" />
+    <title>Result</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/result.css}" />
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
@@ -13,12 +13,18 @@
 <body>
 
     <div class="flex-container2">
-        <tr>
-            <td>
-                <!--/*@thymesVar id="cat" type="pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat"*/-->
-                <p th:text="'Result: ' + ${cat.result}">Result:  </p>
-            </td>
-        </tr>
+
+        <form>
+            <div>
+                <fieldset>
+                        <legend>Result</legend>
+                        <div>
+                            <p th:text="${cat.result}">Result:  </p>
+                        </div>
+                </fieldset>
+            </div>
+        </form>
+
     </div>
 
 </body>

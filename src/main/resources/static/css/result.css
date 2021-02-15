@@ -1,6 +1,11 @@
 p {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
 }
 
 .flex-container1 {
