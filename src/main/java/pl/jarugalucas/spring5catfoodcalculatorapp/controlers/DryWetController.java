@@ -31,11 +31,11 @@ public class DryWetController {
         // log purpose, will be remove later
         System.out.println(cat.toString());
 
-        double result;
+        String result;
         if(cat.getTypeOfFood().equals("dry")){
-            result = algorithmService.calculateDryFood(cat.getWeight());
+            result = algorithmService.calculateDryFood(cat.getWeight()).toString();
         } else {
-            result = algorithmService.calculateWetFood(cat.getWeight());
+            result = algorithmService.calculateWetFood(cat.getWeight()).toString();
         }
         cat.setResult(result);
 

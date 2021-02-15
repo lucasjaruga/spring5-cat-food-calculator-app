@@ -4,9 +4,9 @@ public class Cat {
 
     private Integer weight;
     private String typeOfFood;
-    private Integer wetFoodValue;
+    private Double wetFoodValue;
     private Integer noMeals;
-    private Double result;
+    private String result;
 
     public Cat() {
     }
@@ -19,7 +19,7 @@ public class Cat {
     }
 
     // constructor for mix food calculation
-    public Cat(Integer weight, Integer wetFoodValue, Integer noMeals) {
+    public Cat(Integer weight, Double wetFoodValue, Integer noMeals) {
         this.weight = weight;
         this.noMeals = noMeals;
         this.wetFoodValue = wetFoodValue;
@@ -41,11 +41,11 @@ public class Cat {
         this.typeOfFood = typeOfFood;
     }
 
-    public Integer getWetFoodValue() {
+    public Double getWetFoodValue() {
         return wetFoodValue;
     }
 
-    public void setWetFoodValue(Integer wetFoodValue) {
+    public void setWetFoodValue(Double wetFoodValue) {
         this.wetFoodValue = wetFoodValue;
     }
 
@@ -57,11 +57,11 @@ public class Cat {
         this.noMeals = noMeals;
     }
 
-    public Double getResult() {
+    public String getResult() {
         return result;
     }
 
-    public void setResult(Double result) {
+    public void setResult(String result) {
         this.result = result;
     }
 

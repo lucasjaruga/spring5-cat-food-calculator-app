@@ -6,10 +6,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat;
+import pl.jarugalucas.spring5catfoodcalculatorapp.services.AlgorithmService;
 
 @Controller
 @RequestMapping("/2")
 public class MixController {
+
+    AlgorithmService algorithmService;
+
+    public MixController(AlgorithmService algorithmService) {
+        this.algorithmService = algorithmService;
+    }
 
     @RequestMapping({"/mix"})
     public String getMix(Model model){
