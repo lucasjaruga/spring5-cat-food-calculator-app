@@ -25,6 +25,13 @@ public class DryWetController {
         return "/html/dryWet";
     }
 
+    @RequestMapping({"/mix"})
+    public String getMix(Model model){
+
+        model.addAttribute("cat", new Cat());
+        return "/html/mix";
+    }
+
     @PostMapping("/postCatData")
     public String postCatData(@ModelAttribute("cat") Cat cat){
 

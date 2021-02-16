@@ -27,6 +27,28 @@
 
     </div>
 
+    <div class="flex-container1">
+
+        <div>
+            <form th:action="@{index.html/getIndex}" method="get">
+                <button type="submit" class="button button1">Main menu</button>
+            </form>
+        </div>
+
+        <div>
+            <form th:action="@{/1/drywet}" method="get">
+                <button type="submit" class="button button1">Dry/wet calculation</button>
+            </form>
+        </div>
+
+        <div>
+            <form th:action="@{/2/mix}" method="get">
+                <button type="submit" class="button button1">Mix calculation</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
 
 <!- --------------------- BODY ends ---------------------  ->
