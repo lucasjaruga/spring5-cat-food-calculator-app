@@ -66,10 +66,10 @@ public class AlgorithmServiceImpl implements AlgorithmService {
 
         if(cat.getTypeOfFood().equals("dry")){
             Double dryValue = calculateDryFood(cat.getWeight());
-            return dryValue / noMeals + " g dry food per meal.";
+            return Math.round(dryValue / noMeals) + " g dry food per meal.";
         } else {
             Double wetValue = calculateWetFood(cat.getWeight());
-            return wetValue / noMeals + " g wet food per meal.";
+            return Math.round(wetValue / noMeals) + " g wet food per meal.";
         }
     }
 
@@ -83,6 +83,6 @@ public class AlgorithmServiceImpl implements AlgorithmService {
                                                     calculateDryFood(cat.getWeight()),
                                                     wetFoodValue);
 
-        return wetFoodValue / noMeals + " g wet food and " + dryValue / noMeals + " g dry food per meal.";
+        return Math.round(wetFoodValue / noMeals) + " g wet food and " + Math.round(dryValue / noMeals) + " g dry food per meal.";
     }
 }
