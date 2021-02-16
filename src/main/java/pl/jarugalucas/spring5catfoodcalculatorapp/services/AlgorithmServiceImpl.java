@@ -1,6 +1,7 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.services;
 
 import org.springframework.stereotype.Service;
+import pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat;
 
 @Service
 public class AlgorithmServiceImpl implements AlgorithmService {
@@ -49,11 +50,39 @@ public class AlgorithmServiceImpl implements AlgorithmService {
      * @param wetFoodValue - a JTextField object which stores String user input value of how much wet food owner wants to give to a cat
      * @return a Double which represents amount of dry food to give a cat per day
      */
+    @Override
     public Double calculatePercentOfDryFood(Double wetResult, Double dryResult, Double wetFoodValue){
 
         double dailyNeeds = wetFoodValue / wetResult;
         Double percentOfDryFood = 1.0 - dailyNeeds;
 
         return dryResult * percentOfDryFood;
+    }
+
+    @Override
+    public String getDryWetResult(Cat cat){
+
+        int noMeals = cat.getNoMeals();
+
+        if(cat.getTypeOfFood().equals("dry")){
+            Double dryValue = calculateDryFood(cat.getWeight());
+            return dryValue / noMeals + " g dry food per meal.";
+        } else {
+            Double wetValue = calculateWetFood(cat.getWeight());
+            return wetValue / noMeals + " g wet food per meal.";
+        }
+    }
+
+    @Override
+    public String getMixResult(Cat cat){
+
+        int noMeals = cat.getNoMeals();
+        Double wetFoodValue = cat.getWetFoodValue();
+
+        Double dryValue = calculatePercentOfDryFood(calculateWetFood(cat.getWeight()),
+                                                    calculateDryFood(cat.getWeight()),
+                                                    wetFoodValue);
+
+        return wetFoodValue / noMeals + " g wet food and " + dryValue / noMeals + " g dry food per meal.";
     }
 }
