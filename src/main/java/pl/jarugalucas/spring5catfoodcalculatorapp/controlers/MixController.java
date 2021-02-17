@@ -28,9 +28,6 @@ public class MixController {
     @PostMapping("/postCatData")
     public String postCatData(@ModelAttribute("cat") Cat cat){
 
-        // log purpose, will be remove later
-        System.out.println(cat.toString());
-
         cat.setResult(algorithmService.getMixResult(cat));
 
         return "html/result";

@@ -59,6 +59,12 @@ public class AlgorithmServiceImpl implements AlgorithmService {
         return dryResult * percentOfDryFood;
     }
 
+    /**
+     * Method to provide final result for user about wet or dry food
+     *
+     * @param cat - a Cat object which stores all necessary values for calculations
+     * @return a String which represents the final dry or wet food result for user, based on Cat's fields
+     */
     @Override
     public String getDryWetResult(Cat cat){
 
@@ -73,6 +79,12 @@ public class AlgorithmServiceImpl implements AlgorithmService {
         }
     }
 
+    /**
+     * Method to provide final result for user about mix food
+     *
+     * @param cat - a Cat object which stores all necessary values for calculations
+     * @return a String which represents the final mix food result for user, based on Cat's fields
+     */
     @Override
     public String getMixResult(Cat cat){
 

@@ -35,9 +35,6 @@ public class DryWetController {
     @PostMapping("/postCatData")
     public String postCatData(@ModelAttribute("cat") Cat cat){
 
-        // log purpose, will be remove later
-        System.out.println(cat.toString());
-
         cat.setResult(algorithmService.getDryWetResult(cat));
 
         return "html/result";
