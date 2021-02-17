@@ -5,33 +5,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Dry/wet food</title>
-    <link type="text/css" rel="stylesheet" th:href="@{/css/dryWetStyle.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/calculationFormStyle.css}" />
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
 
 <body>
 
-    <div class="flex-container2">
+    <div class="flex-container1">
 
-        <div>
-            <p><u>Dry/wet food calculation</u></p>
-            <p1>Provide information about cat and food</p1>
-        </div>
+            <div>
+                <p><u>Dry/wet food calculation</u></p>
+            </div>
 
-        <div>
+            <div>
+                <p1>Provide information about cat and food</p1>
+            </div>
+
             <!--/*@thymesVar id="cat" type="pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat"*/-->
             <form action="#" th:object="${cat}" th:action="@{/1/postCatData}" method="post">
-                <div>
-                        <fieldset>
-                            <legend>Cat weight in grams (g)</legend>
-                            <div>
-                                <input required type="text" id="catWeight" name="catWeight" maxlength="5" size="4" th:field="*{weight}" />
-                            </div>
-                        </fieldset>
-                </div>
+                    <fieldset>
+                        <legend>Cat weight in grams (g)</legend>
+                        <div>
+                            <input required type="text" id="catWeight" name="catWeight" maxlength="5" size="4" th:field="*{weight}" />
+                        </div>
+                    </fieldset>
 
-                <div>
                     <fieldset>
                         <legend>Choose type of food you want to calculate</legend>
                         <div>
@@ -41,31 +40,28 @@
                             <label class="radio-label" for="wet">Wet food</label>
                         </div>
                     </fieldset>
+
+                    <fieldset>
+                        <legend>Number of meals per day</legend>
+                        <div>
+                            <input required type="text" id="noMeals" name="noMeals" maxlength="1" size="2" th:field="*{noMeals}" />
+                        </div>
+                    </fieldset>
+
+                <div class="button-container">
+                    <button type="submit" class="button1">Calculate</button>
                 </div>
 
-                <div>
-                        <fieldset>
-                            <legend>Number of meals per day</legend>
-                            <div>
-                                <input required type="text" id="noMeals" name="noMeals" maxlength="1" size="2" th:field="*{noMeals}" />
-                            </div>
-                        </fieldset>
-                </div>
-
-                <div>
-                    <button type="submit" class="button button1">Calculate</button>
-                </div>
             </form>
-        </div>
     </div>
 
-    <div class="flex-container1">
+    <div class="flex-container2">
 
-        <div>
             <form th:action="@{index.html/getIndex}" method="get">
-                <button type="submit" class="button button1">Go back</button>
+                <div>
+                    <button type="submit" class="button1">Go back</button>
+                </div>
             </form>
-        </div>
 
     </div>
 

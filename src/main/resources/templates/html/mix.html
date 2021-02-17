@@ -5,17 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Mix food</title>
-    <link type="text/css" rel="stylesheet" th:href="@{/css/mixStyle.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{/css/calculationFormStyle.css}" />
 </head>
 
 <!- --------------------- BODY starts ---------------------  ->
 
 <body>
 
-    <div class="flex-container2">
+    <div class="flex-container1">
 
         <div>
             <p><u>Mix food calculation</u></p>
+        </div>
+
+        <div>
             <p1>Provide information about cat and food</p1>
         </div>
 
@@ -47,14 +50,14 @@
                 </fieldset>
             </div>
 
-            <div>
+            <div class="button-container">
                 <button type="submit" class="button button1">Calculate</button>
             </div>
 
         </form>
     </div>
 
-    <div class="flex-container1">
+    <div class="flex-container2">
 
         <div>
             <form th:action="@{index.html/getIndex}" method="get">
