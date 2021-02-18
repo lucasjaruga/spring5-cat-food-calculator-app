@@ -1,36 +1,52 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.controlers;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.jarugalucas.spring5catfoodcalculatorapp.services.AlgorithmService;
-import pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat;
+import pl.jarugalucas.spring5catfoodcalculatorapp.model.DryWetCat;
+import pl.jarugalucas.spring5catfoodcalculatorapp.services.CatFoodAlgorithmService;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/1")
 public class DryWetController {
 
-    AlgorithmService algorithmService;
+    CatFoodAlgorithmService catFoodAlgorithmService;
 
-    public DryWetController(AlgorithmService algorithmService) {
-        this.algorithmService = algorithmService;
+    public DryWetController(CatFoodAlgorithmService catFoodAlgorithmService) {
+        this.catFoodAlgorithmService = catFoodAlgorithmService;
     }
 
     @RequestMapping({"/drywet"})
     public String getDryWet(Model model){
 
-        model.addAttribute("cat", new Cat());
+        model.addAttribute("dryWetCat", new DryWetCat());
         return "/html/dryWet";
     }
 
+    @InitBinder
+    public void initBinder(WebDataBinder dataBinder) {
+
+        StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+        dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+    }
+
     @PostMapping("/postCatData")
-    public String postCatData(@ModelAttribute("cat") Cat cat){
+    public String postCatData(@Valid @ModelAttribute("dryWetCat") DryWetCat cat, BindingResult bindingResult){
 
-        cat.setResult(algorithmService.getDryWetResult(cat));
-
-        return "html/result";
+        if(bindingResult.hasErrors()){
+            return "/html/dryWet";
+        } else {
+            cat.setResult(catFoodAlgorithmService.getDryWetResult(cat));
+            return "html/result";
+        }
     }
 
     @RequestMapping("index.html/getIndex")

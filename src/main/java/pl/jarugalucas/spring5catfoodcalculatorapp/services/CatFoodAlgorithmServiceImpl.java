@@ -1,10 +1,11 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.services;
 
 import org.springframework.stereotype.Service;
-import pl.jarugalucas.spring5catfoodcalculatorapp.model.Cat;
+import pl.jarugalucas.spring5catfoodcalculatorapp.model.DryWetCat;
+import pl.jarugalucas.spring5catfoodcalculatorapp.model.MixCat;
 
 @Service
-public class AlgorithmServiceImpl implements AlgorithmService {
+public class CatFoodAlgorithmServiceImpl implements CatFoodAlgorithmService {
 
     private final Integer minCatWeight = 2000;
 
@@ -62,11 +63,11 @@ public class AlgorithmServiceImpl implements AlgorithmService {
     /**
      * Method to provide final result for user about wet or dry food
      *
-     * @param cat - a Cat object which stores all necessary values for calculations
+     * @param cat - a DryWetCat object which stores all necessary values for calculations
      * @return a String which represents the final dry or wet food result for user, based on Cat's fields
      */
     @Override
-    public String getDryWetResult(Cat cat){
+    public String getDryWetResult(DryWetCat cat){
 
         int noMeals = cat.getNoMeals();
 
@@ -82,11 +83,11 @@ public class AlgorithmServiceImpl implements AlgorithmService {
     /**
      * Method to provide final result for user about mix food
      *
-     * @param cat - a Cat object which stores all necessary values for calculations
+     * @param cat - a MixCat object which stores all necessary values for calculations
      * @return a String which represents the final mix food result for user, based on Cat's fields
      */
     @Override
-    public String getMixResult(Cat cat){
+    public String getMixResult(MixCat cat){
 
         int noMeals = cat.getNoMeals();
         Double wetFoodValue = cat.getWetFoodValue();

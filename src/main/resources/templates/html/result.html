@@ -18,8 +18,11 @@
             <div>
                 <fieldset>
                         <legend>Result</legend>
-                        <div>
-                            <p th:text="${cat.result}">Result:  </p>
+                        <div th:if="${dryWetCat != null}">
+                            <p th:text="${dryWetCat.result}">Result:  </p>
+                        </div>
+                        <div th:if="${mixCat != null}">
+                            <p th:text="${mixCat.result}">Result:  </p>
                         </div>
                 </fieldset>
             </div>

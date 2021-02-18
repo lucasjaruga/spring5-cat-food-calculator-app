@@ -1,29 +1,22 @@
 package pl.jarugalucas.spring5catfoodcalculatorapp.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class Cat {
 
+    @NotNull(message="is required")
+    @Min(value = 2000, message="must be >= 2 000")
+    @Max(value = 25000, message="must be <= 25 000")
     private Integer weight;
-    private String typeOfFood;
-    private Double wetFoodValue;
+
+    @NotNull(message="is required")
+    @Min(value = 1, message="must be >= 1")
+    @Max(value = 8, message="must be <= 8")
     private Integer noMeals;
+
     private String result;
-
-    public Cat() {
-    }
-
-    // constructor for dry/wet food calculation
-    public Cat(Integer weight, String typeOfFood, Integer noMeals) {
-        this.weight = weight;
-        this.typeOfFood = typeOfFood;
-        this.noMeals = noMeals;
-    }
-
-    // constructor for mix food calculation
-    public Cat(Integer weight, Double wetFoodValue, Integer noMeals) {
-        this.weight = weight;
-        this.noMeals = noMeals;
-        this.wetFoodValue = wetFoodValue;
-    }
 
     public Integer getWeight() {
         return weight;
@@ -31,22 +24,6 @@ public class Cat {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
-    }
-
-    public String getTypeOfFood() {
-        return typeOfFood;
-    }
-
-    public void setTypeOfFood(String typeOfFood) {
-        this.typeOfFood = typeOfFood;
-    }
-
-    public Double getWetFoodValue() {
-        return wetFoodValue;
-    }
-
-    public void setWetFoodValue(Double wetFoodValue) {
-        this.wetFoodValue = wetFoodValue;
     }
 
     public Integer getNoMeals() {
@@ -69,9 +46,8 @@ public class Cat {
     public String toString() {
         return "Cat{" +
                 "weight=" + weight +
-                ", typeOfFood='" + typeOfFood + '\'' +
-                ", wetFoodValue=" + wetFoodValue +
                 ", noMeals=" + noMeals +
+                ", result='" + result + '\'' +
                 '}';
     }
 }

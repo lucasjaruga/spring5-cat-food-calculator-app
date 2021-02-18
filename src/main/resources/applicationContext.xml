@@ -12,4 +12,12 @@
     <context:component-scan base-package="pl.jarugalucas.spring5catfoodcalculatorapp.model" />
     <context:component-scan base-package="pl.jarugalucas.spring5catfoodcalculatorapp.controlers" />
 
+    <!-- Load custom message resources -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+
+        <property name="basenames" value="/messages" />
+
+    </bean>
+
 </beans>
