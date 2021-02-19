@@ -96,6 +96,29 @@ public class CatFoodAlgorithmServiceImpl implements CatFoodAlgorithmService {
                                                     calculateDryFood(cat.getWeight()),
                                                     wetFoodValue);
 
-        return Math.round(wetFoodValue / noMeals) + " g wet food and " + Math.round(dryValue / noMeals) + " g dry food per meal.";
+        if(cat.getMaxWetFood() != "") {
+            return Math.round(wetFoodValue / noMeals) + " g wet food. No need to give your cat a dry food. Would be too much.";
+        } else {
+            return Math.round(wetFoodValue / noMeals) + " g wet food and " + Math.round(dryValue / noMeals) + " g dry food per meal.";
+        }
+    }
+
+    /**
+     * This is support method to validate if user don't want to give a cat too much food while calculating mix food.
+     *
+     * @param cat - a MixCat object which stores all necessary values for calculations
+     * @return a boolean value - true if user want to give too much wet food
+     */
+    @Override
+    public boolean checkIfNotTooMuchWet(MixCat cat) {
+
+        double maxWet = calculateWetFood(cat.getWeight());
+
+        if(maxWet < cat.getWetFoodValue()){
+            cat.setMaxWetFood("Max value: " + Math.floor(maxWet));
+            return true;
+        } else {
+            return false;
+        }
     }
 }

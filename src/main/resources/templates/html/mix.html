@@ -39,6 +39,7 @@
                         <div>
                             <input required type="text" id="wetFood" name="wetFoodValue" maxlength="5" size="4" th:field="*{wetFoodValue}"/>
                             <i style="color:red;" th:if="${#fields.hasErrors('wetFoodValue')}"  th:errors="*{wetFoodValue}">Error msg</i>
+                            <i style="color:red;" th:if="${mixCat.maxWetFood != null}" th:text="*{maxWetFood}" >Error msg</i>
                         </div>
                 </fieldset>
             </div>

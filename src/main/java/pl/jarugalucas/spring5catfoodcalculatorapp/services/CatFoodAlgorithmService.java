@@ -10,4 +10,5 @@ public interface CatFoodAlgorithmService {
     public Double calculatePercentOfDryFood(Double wetResult, Double dryResult, Double wetFoodValue);
     public String getDryWetResult(DryWetCat cat);
     public String getMixResult(MixCat cat);
+    public boolean checkIfNotTooMuchWet(MixCat cat);
 }

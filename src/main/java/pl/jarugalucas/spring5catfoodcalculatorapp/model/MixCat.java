@@ -8,6 +8,7 @@ public class MixCat extends Cat{
     @NotNull(message="is required")
     @Min(value = 1, message="must be >= 1")
     private Double wetFoodValue;
+    private String maxWetFood;
 
     public MixCat() {
     }
@@ -18,6 +19,14 @@ public class MixCat extends Cat{
 
     public void setWetFoodValue(Double wetFoodValue) {
         this.wetFoodValue = wetFoodValue;
+    }
+
+    public String getMaxWetFood() {
+        return maxWetFood;
+    }
+
+    public void setMaxWetFood(String maxWetFood) {
+        this.maxWetFood = maxWetFood;
     }
 
     @Override
