@@ -96,7 +96,7 @@ public class CatFoodAlgorithmServiceImpl implements CatFoodAlgorithmService {
                                                     calculateDryFood(cat.getWeight()),
                                                     wetFoodValue);
 
-        if(cat.getMaxWetFood() != "") {
+        if(cat.getMaxWetFood() != null) {
             return Math.round(wetFoodValue / noMeals) + " g wet food. No need to give your cat a dry food. Would be too much.";
         } else {
             return Math.round(wetFoodValue / noMeals) + " g wet food and " + Math.round(dryValue / noMeals) + " g dry food per meal.";
